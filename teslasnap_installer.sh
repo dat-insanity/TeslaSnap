@@ -10,8 +10,8 @@ echo "[`date`] Changed directory to `pwd`"
 read -p "Paste in your tesla.sexy key: " teslauploadkey
 touch uploadkey.txt
 echo "[`date`] Created uploadkey file"
-echo $telsauploadkey tr -d '\n' > uploadkey.txt
-echo "[`date`] Wrote key to file"
+echo $telsauploadkey | tr -d '\n' > uploadkey.txt
+echo "[`date`] Wrote key ($telsauploadkey) to file"
 mkdir temp
 echo "[`date`] Created temp directory"
 curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/dat-insanity/TeslaSnap/main/teslasnap_daemon.sh -o teslasnap_daemon.sh
@@ -32,8 +32,6 @@ mkdir Screenshots
 echo "[`date`] Created screenshots directory. All your screenshots will be saved here."
 launchctl load ~/Library/LaunchAgents/sexy.tesla.datinsanity.plist
 echo "[`date`] Load the launch agent for teslasnap, under user `whoami`"
-chown `whoami` "/Users/$USER/Application Support/teslasnap/temp"
-echo "[`date`] Give perms for temp folder"
 defaults write com.apple.screencapture location "~/Library/Application Support/teslasnap/temp"
 echo "[`date`] Route screenshots to a folder for teslasnap_daemon to upload"
 echo "[`date`] Done! Thank you for installing teslasnap! If you have issues with teslasnap, please make a ticket in our server, or dm dat_insanity#2048 \n Note: all your screenshots will now be saved in ~/Desktop/Screenshots"
