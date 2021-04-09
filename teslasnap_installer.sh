@@ -10,8 +10,8 @@ echo "[`date`] Changed directory to `pwd`"
 read -p "Paste in your tesla.sexy key: " teslauploadkey
 touch uploadkey.txt
 echo "[`date`] Created uploadkey file"
-echo $telsauploadkey | tr -d '\n' > uploadkey.txt
-echo "[`date`] Wrote key ($telsauploadkey) to file"
+echo $teslauploadkey | tr -d '\n' > uploadkey.txt
+echo "[`date`] Wrote key ($teslauploadkey) to file"
 mkdir temp
 echo "[`date`] Created temp directory"
 curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/dat-insanity/TeslaSnap/main/teslasnap_daemon.sh -o teslasnap_daemon.sh
@@ -24,7 +24,7 @@ cd ~/Library/LaunchAgents/
 echo "[`date`] Changed directory to `pwd`"
 curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/dat-insanity/TeslaSnap/main/sexy.tesla.datinsanity.plist -o sexy.tesla.datinsanity.plist
 echo "[`date`] Created and saved sexy.tesla.datinsanity.plist"
-sed -i "s/REPLACEWITHUSERNAME/`whoami`/g" sexy.tesla.datinsanity.plist
+sed -i "" "s/REPLACEWITHUSERNAME/`whoami`/g" sexy.tesla.datinsanity.plist
 echo "[`date`] Created launch agent for user `whoami`"
 cd ~/Desktop
 echo "[`date`] Changed directory to `pwd`"
