@@ -17,7 +17,7 @@ filecheck=$(ls -1)
         else
                 echo `date`\: 'Image recieved. Uploading...'>> ../logs.txt
                 imageurl=$(curl -XPOST -H ""auth": "$uploadkey"" -F file=@"$filecheck" -F URL=$json:url$ https://api.tesla.sexy/files/upload)
-                refinedimgurl=$(echo $imageurl | tr -d '\n' | sed -e 's/^........................//' -e 's/......................................................................................................................................................................................$//')
+                refinedimgurl=$(echo $imageurl | tr -d '\n' | sed -e 's/^..........................//' -e 's/......................................................................................................................................................................................$//')
                 echo `date`\: ''$imageurl >> ../logs.txt
                 echo $refinedimgurl | tr -d '\n' | pbcopy
                 case $refinedimgurl in
