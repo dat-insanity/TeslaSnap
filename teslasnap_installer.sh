@@ -35,5 +35,6 @@ echo "[`date`] Load the launch agent for teslasnap, under user `whoami`"
 defaults write com.apple.screencapture location "~/Library/Application Support/teslasnap/temp"
 pkill screencapture
 defaults write com.apple.screencapture location "~/Library/Application Support/teslasnap/temp"
+# i have to do it twice because sometimes macos shits itself and it dont work
 echo "[`date`] Route screenshots to a folder for teslasnap_daemon to upload"
 echo "[`date`] Done! Thank you for installing teslasnap! If you have issues with teslasnap, please make a ticket in our server, or dm dat_insanity#2048 \n Note: all your screenshots will now be saved in ~/Desktop/Screenshots"
