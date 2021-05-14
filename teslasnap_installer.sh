@@ -18,6 +18,8 @@ curl -H 'Cache-Control: no-cache' https://raw.githubusercontent.com/dat-insanity
 echo "[`date`] Created and saved teslasnap_daemon"
 chmod +X "/Users/$USER/Library/Application Support/teslasnap/teslasnap_daemon.sh"
 echo "[`date`] Gave exec permissions to teslasnap_daemon"
+curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 -o jq
+chmod +x jq
 
 
 cd ~/Library/LaunchAgents/
@@ -33,8 +35,5 @@ echo "[`date`] Created screenshots directory. All your screenshots will be saved
 launchctl load ~/Library/LaunchAgents/sexy.tesla.datinsanity.plist
 echo "[`date`] Load the launch agent for teslasnap, under user `whoami`"
 defaults write com.apple.screencapture location "~/Library/Application Support/teslasnap/temp"
-pkill screencapture
-defaults write com.apple.screencapture location "~/Library/Application Support/teslasnap/temp"
-# i have to do it twice because sometimes macos shits itself and it dont work
 echo "[`date`] Route screenshots to a folder for teslasnap_daemon to upload"
 echo "[`date`] Done! Thank you for installing teslasnap! If you have issues with teslasnap, please make a ticket in our server, or dm dat_insanity#2048 \n Note: all your screenshots will now be saved in ~/Desktop/Screenshots"
