@@ -19,8 +19,9 @@ echo "[`date`] Created and saved teslasnap_daemon"
 chmod +X "/Users/$USER/Library/Application Support/teslasnap/teslasnap_daemon.sh"
 echo "[`date`] Gave exec permissions to teslasnap_daemon"
 curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-osx-amd64 -o jq
+"[`date`] Downloaded jq"
 chmod +x jq
-
+echo "[`date`] Gave exec permissions to jq"
 
 cd ~/Library/LaunchAgents/
 echo "[`date`] Changed directory to `pwd`"
