@@ -24,7 +24,7 @@ filecheck=$(ls -1)
                 h*) osascript -e 'display notification "Image uploaded successfully." with title "tSnap" sound name "Submarine"' ;;
                 *) osascript -e 'display notification "An error occurred. Please ask on our discord for help." with title "tSnap" sound name "Frog"' ;;
                         esac
-                cp -a "$filecheck" "/Users/$USER/Desktop/Screenshots/Screenshot-$(date +"%m-%d-%y-%r").png"
+                cp -a "$filecheck" "/Users/$USER/Desktop/Screenshots/$filecheck"
                 rm -f "$filecheck"
         fi
 done
